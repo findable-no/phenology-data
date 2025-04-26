@@ -41,10 +41,17 @@ def parse_coordinates(coord_str):
     if not match:
         raise ValueError("Invalid coordinate format")
     
-    lat_deg, lat_min, lat_dir, lon_deg, lon_min, lon_dir = match.groups()
+    lat_deg, lat_decimals, lat_dir, lon_deg, lon_decimals, lon_dir = match.groups()
     
-    latitude = dms_to_decimal(lat_deg, lat_min, lat_dir)
-    longitude = dms_to_decimal(lon_deg, lon_min, lon_dir)
+    if lat_decimals != '':
+        latitude = float(lat_deg) + float(lat_decimals) / 10
+    else:
+        latitude = float(lat_deg)
+    
+    if lon_decimals != '':
+        longitude = float(lon_deg) + float(lon_decimals) / 10
+    else:
+        longitude = float(lon_deg)
     
     return latitude, longitude
 
@@ -90,7 +97,8 @@ def show_selection(tables,
                    subplot_size = (5, 10),
                    show_images = True,
                    table_rows = table_rows,
-                   table_cols = table_cols):
+                   table_cols = table_cols,
+                   use_dilation = False):
     
     # Get the coordinates from the info_dict
     start_r_idx = info_dict['row_start_idx']
@@ -114,23 +122,33 @@ def show_selection(tables,
 
             tmp_img = table[start_r:(stop_r + offset), start_c:(stop_c + offset)]
 
-            # Apply morphlogical grayscale dilation to increase contrast
-            selem = disk(selem_size)
-            tmp_img = dilation(1 - tmp_img, selem)
-            tmp_img = 1 - tmp_img
+            # Normalize the image
+            tmp_img = tmp_img - tmp_img.min()
+            tmp_img = tmp_img / tmp_img.max()
 
-            images.append(table[start_r:(stop_r + offset), start_c:(stop_c + offset)])
+            # Apply morphlogical grayscale dilation to increase contrast
+            if use_dilation:
+                selem = disk(selem_size)
+                tmp_img = dilation(1 - tmp_img, selem)
+                tmp_img = 1 - tmp_img
+
+            images.append(tmp_img)
             
         else:
 
             tmp_img = table[start_r:(stop_r + offset), start_c:(stop_c + offset)]
 
+            # Normalize the image
+            tmp_img = tmp_img - tmp_img.min()
+            tmp_img = tmp_img / tmp_img.max()
+
             tmp_img = np.rot90(tmp_img, k = 3)
 
             # Apply morphlogical grayscale dilation to increase contrast
-            selem = disk(selem_size)
-            tmp_img = dilation(1 - tmp_img, selem)
-            tmp_img = 1 - tmp_img
+            if use_dilation:
+                selem = disk(selem_size)
+                tmp_img = dilation(1 - tmp_img, selem)
+                tmp_img = 1 - tmp_img
 
             images.append(tmp_img)
 
@@ -437,7 +455,7 @@ species_list = [
         'row_end_idx': 3,
         'col_start_idx': 3,
         'col_end_idx': 4,
-        'phases': ['fruit', 'timespan']
+        'phases': ['flowering', 'fruit', 'timespan']
     },
     {
         'norwegian_name': 'Hvitveis',
