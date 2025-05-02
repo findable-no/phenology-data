@@ -35,7 +35,7 @@ At [Findable AS](https://www.findable.ai/) we do document understanding for the 
 A few observations about the data:
 1. There are 278 tables corresponding to the 278 observation locations.
 2. Every table contains 4 metadata fields (show in yellow below) and 292 data fields (shown in blue):
-![](Professor%20Printz%20and%20his%20phenology%20data/image%202.png)
+![](./references/table_with_fields.png)
 3. There are 83.956 fields all in all, but as can be observed above not all observation were made in every location.
 4. There are a total of 33.905 cells that are not blank.
 5. You will find a comprehensive list of all the observations and how to interpret them in the file xxx in the data folder.
