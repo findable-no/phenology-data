@@ -1,0 +1,11 @@
+# torch
+# unsloth
+# transformers
+pandas
+numpy
+easyocr
+matplotlib
+folium
+branca
+h3
+pyarrow
