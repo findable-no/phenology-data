@@ -14,7 +14,7 @@ In the 1959 publication
 
 he published observations from 278 observation stations for the years 1928 to 1952.  The article, 182 pages long and written in German, contains the data from each observation station in the form of handwritten tables looking like this:
 
-![](Professor%20Printz%20and%20his%20phenology%20data/image%203.png) 
+![](./references/table.png)
 
 For instance, the cell indexed as row i and column 1 (shown in blue in the figure above) represents the Julian date of the first flowering of a tiny plant called [Coltsfoot](https://en.wikipedia.org/wiki/Tussilago) (in Latin, *tussilago farfara*).  [Julian dates](https://en.wikipedia.org/wiki/Julian_day) , as used in this article, are just the day number after the 1st of January, so in a non-leap year the Julian date 137 corresponds to the 17th of May.
 
