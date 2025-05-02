@@ -22,10 +22,15 @@ The coltsfoot is interesting since it is a so-called phenologically plastic plan
 
 So why should we care about these old data?  Well, the observation period coincides with a period when the human contribution of potential greenhouse gases was much lower than today (see [here](https://www.climate.gov/media/14596) for instance for an overview of the evolution of CO2 in the athmosphere since 1750).  In this sense, Henrik Printz’s data represents a *time capsule* of indirect climatic observations that is soon to be a hundred years old.  It serves as a very simple baseline against which we can compare todays conditions and verify if indeed natures phenological phases have been influenced by a possible climatic change.
 
+You will find the scanned pages containing the phenological tables from the original article as a Huggingface dataset here:
+
+[tables.tgz](https://huggingface.co/datasets/findableai/phenology/blob/main/tables.tgz)
+
+Unpack this dataset into the ./data/raw folder.
+
 In this repository you will find:
 
-1) The scanned pages of all the pages in the original articles that contain the phenological tables.
-2) A Jupyter notebook to extract, from every table, a specific cell as an image and code to use a visual large language model (vLLM) to perform an initial reading of these cells
+1) A Jupyter notebook to extract, from every table, a specific cell as an image and code to use a visual large language model (vLLM) to perform an initial reading of these cells
 3) A Jupyter notebook that shows how to finetune the vLLM to read the data more precisely.
 4) Pandas data frames containing the observations in digital format.
 5) A Jupyter notebook containing some examples of how this data can be used to make geoplots of the variability of the data in Norway.
