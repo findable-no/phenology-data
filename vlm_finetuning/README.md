@@ -3,9 +3,10 @@
 This folder contains the files used to create a dataset, and fine-tune Qwen2.5 VL 7B
 
 To use the repo, first create a virtual env, and install required packages with 
-´´´python
+
+```python
 pip install -r qwen_requirements.txt
-´´´
+```
 
 
 
