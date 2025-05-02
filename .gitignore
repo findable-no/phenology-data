@@ -87,3 +87,14 @@ target/
 
 # Mypy cache
 .mypy_cache/
+references/DPN-T1.pdf
+
+# Added some files that are too large
+references/DPN-T1.pdf
+references/DPN-T2.pdf
+konica-nor_prinz-all.tif
+
+# Other things to ignore
+.pyenv
+
+
