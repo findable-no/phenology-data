@@ -43,8 +43,6 @@ A few observations about the data:
 ![](./references/table_with_fields.png)
 3. There are 83.956 fields all in all, but as can be observed above not all observation were made in every location.
 4. There are a total of 33.905 cells that are not blank.
-5. You will find a comprehensive list of all the observations and how to interpret them in the file xxx in the data folder.
-6. Finally, you will find a pandas data frame and an excel sheet containing the resulting data after *manual verification* by real human beings.
 
 ### Disclaimer
 We present this data *in good faith and as is* without any claims, either direct nor implied, as to their usability for any purpose whatsoever.
