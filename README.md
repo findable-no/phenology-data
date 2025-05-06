@@ -43,6 +43,7 @@ A few observations about the data:
 ![](./references/table_with_fields.png)
 3. There are 83.956 fields all in all, but as can be observed above not all observation were made in every location.
 4. There are a total of 33.905 cells that are not blank.
+5. Note: The meaning of the parenthesis and the brackets are as follows: Numbers in __parenthesis__ are averages over __only one or two years__, numbers in brackets are averages over __only 3 or 4 years__.
 
 ### Disclaimer
 We present this data *in good faith and as is* without any claims, either direct nor implied, as to their usability for any purpose whatsoever.
